@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0a0f1a;
+  --bg-secondary: #111827;
+  --bg-card: #1e293b;
+  --accent: #0ea5e9;
+  --accent-hover: #38bdf8;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: rgba(148, 163, 184, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  .container-narrow {
+    @apply mx-auto max-w-6xl px-6;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text text-transparent;
+  }
+}
+
+/* Smooth scroll offset for fixed nav */
+section[id] {
+  scroll-margin-top: 5rem;
+}
