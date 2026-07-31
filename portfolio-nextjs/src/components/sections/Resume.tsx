@@ -1,31 +1,43 @@
 const education = [
   {
-    date: "June 2018 – March 2020",
-    title: "Higher Secondary School",
-    org: "Gyanmanjari Vidhyapith",
-  },
-  {
-    date: "July 2020 – April 2024",
+    date: "May 2024",
     title: "Information Technology",
-    org: "Dharmsinh Desai University",
+    org: "Dharmsinh Desai University, Nadiad",
+    details: ["GPA: 7.61"],
   },
 ];
 
 const experience = [
   {
-    date: "December 2023 – November 2024",
-    title: "Junior Software Developer",
-    org: "Edelta Enterprise Solutions Pvt. Ltd.",
+    date: "Jun 2025 – Present",
+    title: "Product Engineer (Engineer, A1)",
+    org: "Technofuzn Products Pvt. Ltd.",
+    details: [
+      "Enhanced CliOps, a healthcare SaaS platform, by making 70% of Super Admin workflows dynamic, reducing manual configuration.",
+      "Architected and implemented a multi-tenant architecture, enabling secure onboarding and centralized management of multiple clinics.",
+      "Automated WhatsApp notifications, OTPs, and alerts using Meta APIs and MSG91, improving patient engagement and communication reliability.",
+      "Migrated the database from PostgreSQL to MongoDB, enabling a scalable document-based architecture.",
+      "Automated CI/CD deployments and implemented AWS S3 storage for user files on CliOps, cutting release effort and ensuring secure, isolated access across clinics.",
+    ],
   },
   {
-    date: "December 2024 – May 2025",
-    title: "Freelancing",
-    org: "Independent",
+    date: "Dec 2023 – May 2025",
+    title: "Jr. Software Developer",
+    org: "eDelta Enterprise Pvt. Ltd.",
+    details: [
+      "Built AI-powered chatbot workflows using OpenAI and LangChain, reducing average time by 40% through automated customer interactions.",
+      "Improved chatbot response quality by 25% and increased answer accuracy by 19% by optimizing prompts, knowledge retrieval, and AI workflows.",
+      "Architected and integrated RESTful and GraphQL APIs, cutting third-party integration effort by 31%.",
+    ],
   },
   {
-    date: "June 2025 – Present",
-    title: "Software Developer",
-    org: "TechnoFuzn Products Pvt. Ltd.",
+    date: "May 2023 – Jun 2023",
+    title: "Full-stack Intern",
+    org: "Microtech Outsourcing Services LLP",
+    details: [
+      "Developed responsive web applications using React.js and reusable component-based architecture to enhance maintainability and user experience.",
+      "Integrated RESTful APIs and leveraged React Hooks to build dynamic, data-driven user interfaces with efficient state management.",
+    ],
   },
 ];
 
@@ -33,10 +45,12 @@ function TimelineItem({
   date,
   title,
   org,
+  details,
 }: {
   date: string;
   title: string;
   org: string;
+  details?: string[];
 }) {
   return (
     <div className="relative pl-8 pb-8 last:pb-0">
@@ -47,6 +61,19 @@ function TimelineItem({
       </span>
       <h3 className="text-lg font-semibold text-white mt-1">{title}</h3>
       <p className="text-slate-400 text-sm mt-0.5">{org}</p>
+      {details && details.length > 0 && (
+        <ul className="mt-3 space-y-2">
+          {details.map((detail) => (
+            <li
+              key={detail}
+              className="text-slate-400 text-sm leading-relaxed flex gap-2"
+            >
+              <span className="text-sky-500 mt-1.5 shrink-0 w-1 h-1 rounded-full bg-sky-500" />
+              <span>{detail}</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
@@ -62,22 +89,22 @@ export function Resume() {
           Education and professional experience.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16">
-          <div>
-            <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-              <span className="w-8 h-0.5 bg-sky-500 rounded" />
-              Education
-            </h3>
-            {education.map((item) => (
-              <TimelineItem key={item.title} {...item} />
-            ))}
-          </div>
+        <div className="space-y-14 max-w-3xl mx-auto">
           <div>
             <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
               <span className="w-8 h-0.5 bg-sky-500 rounded" />
               Experience
             </h3>
             {experience.map((item) => (
+              <TimelineItem key={`${item.org}-${item.title}`} {...item} />
+            ))}
+          </div>
+          <div>
+            <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+              <span className="w-8 h-0.5 bg-sky-500 rounded" />
+              Education
+            </h3>
+            {education.map((item) => (
               <TimelineItem key={item.title} {...item} />
             ))}
           </div>

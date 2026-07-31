@@ -22,16 +22,15 @@ export function About() {
               About <span className="gradient-text">Me</span>
             </h2>
             <p className="text-lg text-slate-300 leading-relaxed mb-4">
-              I focus on <span className="text-sky-400 font-medium">AI</span>—building
-              intelligent chatbots and conversational systems with Generative AI,
-              LangChain, and cutting-edge LLMs. I blend AI with clean, user-friendly
-              interfaces to create smart human–AI experiences.
+              Product Engineer with{" "}
+              <span className="text-sky-400 font-medium">2+ years</span> building
+              scalable web apps, AI-powered features, and SaaS products. I work
+              closely with cross-functional teams, ship solid software, and dig into
+              tough technical problems when they show up.
             </p>
             <p className="text-slate-400 leading-relaxed mb-8">
-              From voice-driven assistants to workflow-streamlining bots, I enjoy
-              turning ideas into impactful AI solutions. Full stack by foundation—
-              React, Node.js—with a strong emphasis on making AI practical and
-              engaging for real users.
+              What I care about most is building reliable products that actually
+              create business value-not demos that look good and fall apart later.
             </p>
             <a
               href="/pdf/Kanan_Resume.pdf"

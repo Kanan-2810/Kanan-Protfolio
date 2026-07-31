@@ -15,10 +15,10 @@ const services = [
         />
       </svg>
     ),
-    title: "Full Stack Development",
+    title: "Web & SaaS Products",
     description:
-      "Hands-on experience building scalable web applications with React, Node.js, and Express. I focus on clean code, user-friendly interfaces, and efficient backend systems—transforming ideas into impactful digital experiences.",
-    skills: "React.js · Node.js · Express.js · JavaScript · Tailwind CSS",
+      "End-to-end features for web apps and multi-tenant SaaS-React/Next on the front, Node/Express on the back. Things like dynamic admin workflows, clinic onboarding, and solid day-to-day product work.",
+    skills: "React.js · Next.js · Node.js · Express.js · TypeScript",
   },
   {
     icon: (
@@ -36,10 +36,10 @@ const services = [
         />
       </svg>
     ),
-    title: "AI Chatbot & Generative AI",
+    title: "AI Chatbots & RAG",
     description:
-      "Specialist in AI chatbot development using Generative AI, LangChain, and cutting-edge LLM technologies. I build intelligent, conversational solutions and assistant bots that streamline workflows and enhance user engagement.",
-    skills: "Generative AI · LangChain · LLMs · Intelligent Assistants",
+      "Customer-facing chatbots with OpenAI and LangChain. I tune prompts and retrieval so responses are accurate, not fluffy-work that cut handling time and improved answer quality in production.",
+    skills: "OpenAI · LangChain · Prompt Engineering · RAG",
   },
   {
     icon: (
@@ -57,10 +57,10 @@ const services = [
         />
       </svg>
     ),
-    title: "APIs & Modern Delivery",
+    title: "APIs & Integrations",
     description:
-      "REST and GraphQL API development with a focus on reliability and clarity. I combine robust backend design with modern frontend practices. Always eager to learn and innovate—driven by curiosity and a passion for solutions that matter.",
-    skills: "REST · GraphQL · API Development · Scalable Systems",
+      "REST and GraphQL APIs, plus wiring in services like WhatsApp (Meta), MSG91, and AWS S3. Focus on integrations that save setup time and keep products talking to each other cleanly.",
+    skills: "REST · GraphQL · Meta APIs · AWS S3 · MSG91",
   },
 ];
 
@@ -72,10 +72,8 @@ export function Services() {
           My <span className="gradient-text">Services</span>
         </h2>
         <p className="text-slate-400 text-center max-w-2xl mx-auto mb-16">
-          A passionate Full Stack Developer with hands-on experience in
-          scalable web applications and AI-driven conversational solutions.
-          I enjoy combining clean code, user-friendly interfaces, and
-          efficient backend systems to create solutions that matter.
+          Product engineering for web apps, SaaS, and AI features-the same
+          work I do day to day at Technofuzn and previously at eDelta.
         </p>
 
         <div className="grid md:grid-cols-3 gap-8">
