@@ -1,102 +1,114 @@
-const services = [
-  {
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"
-        />
-      </svg>
-    ),
-    title: "Web & SaaS Products",
-    description:
-      "End-to-end features for web apps and multi-tenant SaaS-React/Next on the front, Node/Express on the back. Things like dynamic admin workflows, clinic onboarding, and solid day-to-day product work.",
-    skills: "React.js · Next.js · Node.js · Express.js · TypeScript",
-  },
-  {
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-        />
-      </svg>
-    ),
-    title: "AI Chatbots & RAG",
-    description:
-      "Customer-facing chatbots with OpenAI and LangChain. I tune prompts and retrieval so responses are accurate, not fluffy-work that cut handling time and improved answer quality in production.",
-    skills: "OpenAI · LangChain · Prompt Engineering · RAG",
-  },
-  {
-    icon: (
-      <svg
-        className="w-8 h-8"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    ),
-    title: "APIs & Integrations",
-    description:
-      "REST and GraphQL APIs, plus wiring in services like WhatsApp (Meta), MSG91, and AWS S3. Focus on integrations that save setup time and keep products talking to each other cleanly.",
-    skills: "REST · GraphQL · Meta APIs · AWS S3 · MSG91",
-  },
-];
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Reveal } from "@/components/ui/Reveal";
+import { ArrowButton } from "@/components/ui/ArrowButton";
+import { ServiceArtwork } from "@/components/visuals/ServiceVisuals";
+import { processSteps, services } from "@/data/services";
+import { cn } from "@/lib/cn";
+
+const tones = {
+  glass: "border-white/[0.14] bg-white/[0.05] hover:bg-white/[0.09]",
+  solid: "border-white/[0.10] bg-navy-950/60 hover:bg-navy-950/80",
+  accent:
+    "border-transparent bg-[linear-gradient(160deg,#4F6FFF_0%,#3352E8_60%,#0A317E_100%)] hover:brightness-110",
+} as const;
 
 export function Services() {
   return (
-    <section id="section-services" className="section-padding">
-      <div className="container-narrow">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4">
-          My <span className="gradient-text">Services</span>
-        </h2>
-        <p className="text-slate-400 text-center max-w-2xl mx-auto mb-16">
-          Product engineering for web apps, SaaS, and AI features-the same
-          work I do day to day at Technofuzn and previously at eDelta.
-        </p>
+    <section id="services" className="py-20 md:py-28 lg:py-32">
+      <div className="shell relative">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <Eyebrow tone="dark" className="justify-center">
+            Expertise
+          </Eyebrow>
+          <h2 className="heading mt-6 text-[clamp(2rem,5.5vw,3.75rem)] font-extrabold text-white">
+            Design Solutions Built
+            <br className="hidden sm:block" /> For Growth
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl text-[0.9375rem] leading-relaxed text-white/60">
+            Five capabilities that usually arrive together. Most engagements
+            start with one and pull in the rest as the work reveals what is
+            actually needed.
+          </p>
+        </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="group rounded-2xl border border-slate-700/60 bg-slate-800/40 p-8 text-center hover:border-sky-500/30 hover:bg-slate-800/60 transition-all duration-300 flex flex-col"
+        <div className="mt-12 grid gap-3 md:mt-16 md:grid-cols-2 lg:grid-cols-12 lg:grid-rows-[repeat(3,minmax(180px,auto))] lg:gap-4">
+          {services.map((service, index) => (
+            <Reveal
+              key={service.index}
+              delay={index * 60}
+              className={cn(
+                "group flex flex-col rounded-[20px] border p-6 transition-all duration-500 ease-premium hover:-translate-y-1 md:p-7",
+                tones[service.tone],
+                service.span,
+              )}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-sky-500/15 text-sky-400 mb-6 group-hover:bg-sky-500/25 group-hover:text-sky-300 transition-colors mx-auto">
-                {service.icon}
+              <div className="flex items-start justify-between gap-4">
+                <span className="text-xs font-semibold tabular-nums tracking-[0.14em] text-white/65">
+                  {service.index}
+                </span>
+                <ArrowButton
+                  href="#contact"
+                  label={`Enquire about ${service.title}`}
+                  tone="ghost-light"
+                  size="sm"
+                  direction="diagonal"
+                />
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
+
+              <h3 className="mt-5 text-xl font-bold tracking-[-0.02em] text-white md:text-2xl">
                 {service.title}
               </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-5 flex-grow">
+              <p className="mt-3 text-[0.9375rem] leading-relaxed text-white/60">
                 {service.description}
               </p>
-              <p className="text-xs font-medium text-sky-400/90 tracking-wide">
-                {service.skills}
-              </p>
-            </div>
+
+              <ul className="mt-5 flex flex-wrap gap-1.5">
+                {service.deliverables.map((deliverable) => (
+                  <li
+                    key={deliverable}
+                    className="rounded-full border border-white/15 px-2.5 py-1 text-[11px] font-medium text-white/60"
+                  >
+                    {deliverable}
+                  </li>
+                ))}
+              </ul>
+
+              {service.visual !== "none" ? (
+                <div className="mt-auto pt-7">
+                  <ServiceArtwork visual={service.visual} />
+                </div>
+              ) : null}
+            </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-12 rounded-[20px] border border-white/[0.14] bg-white/[0.04] p-6 md:mt-16 md:p-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <h3 className="text-lg font-bold tracking-[-0.02em] text-white">
+              How the work runs
+            </h3>
+            <p className="max-w-md text-[0.8125rem] leading-relaxed text-white/70">
+              Same four phases whether it is a two-week sprint or a six-month
+              product build. Only the depth changes.
+            </p>
+          </div>
+
+          <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((step) => (
+              <li key={step.step} className="border-t border-white/15 pt-4">
+                <span className="text-xs font-semibold tabular-nums tracking-[0.14em] text-accent-200">
+                  {step.step}
+                </span>
+                <h4 className="mt-2 text-base font-bold tracking-[-0.01em] text-white">
+                  {step.title}
+                </h4>
+                <p className="mt-2 text-[0.8125rem] leading-relaxed text-white/70">
+                  {step.detail}
+                </p>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
       </div>
     </section>
   );

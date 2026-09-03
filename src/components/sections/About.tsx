@@ -1,57 +1,97 @@
 import Image from "next/image";
+import { Button } from "@/components/ui/Button";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Reveal } from "@/components/ui/Reveal";
+import { about } from "@/data/about";
+import { disciplines } from "@/data/stats";
+import { site } from "@/data/site";
 
 export function About() {
   return (
-    <section id="section-about" className="section-padding">
-      <div className="container-narrow">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div className="relative order-2 lg:order-1 flex justify-center lg:justify-start">
-            <div className="relative rounded-2xl overflow-hidden max-w-md w-full min-h-[280px] aspect-[4/5]">
-              <Image
-                src="/images/image_1.jpg"
-                alt="Kanan Dave"
-                fill
-                className="object-contain"
-                sizes="(max-width: 1024px) 100vw, 512px"
-                priority
-              />
-            </div>
-          </div>
-          <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              About <span className="gradient-text">Me</span>
-            </h2>
-            <p className="text-lg text-slate-300 leading-relaxed mb-4">
-              Product Engineer with{" "}
-              <span className="text-sky-400 font-medium">2+ years</span> building
-              scalable web apps, AI-powered features, and SaaS products. I work
-              closely with cross-functional teams, ship solid software, and dig into
-              tough technical problems when they show up.
-            </p>
-            <p className="text-slate-400 leading-relaxed mb-8">
-              What I care about most is building reliable products that actually
-              create business value-not demos that look good and fall apart later.
-            </p>
-            <a
-              href="/pdf/Kanan_Resume.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-sky-500 text-white font-medium hover:bg-sky-400 transition-colors shadow-lg shadow-sky-500/20"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+    <section id="about" className="section-y">
+      <div className="shell">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="lg:col-span-4">
+            <Eyebrow>About Me</Eyebrow>
+
+            <div className="mt-8 overflow-hidden rounded-[24px] border border-black/[0.07] bg-white p-3 shadow-card">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[16px]">
+                <Image
+                  src={site.portraitStudio}
+                  alt={`${site.name}, ${site.role.toLowerCase()}, in a studio portrait`}
+                  fill
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 90vw, 360px"
+                  className="object-cover object-top"
                 />
-              </svg>
-              Download CV
-            </a>
+              </div>
+              <div className="flex items-end justify-between gap-4 px-2 pb-1 pt-4">
+                <div>
+                  <p className="text-base font-bold tracking-[-0.02em] text-ink">
+                    {about.signature}
+                  </p>
+                  <p className="text-xs text-muted">{site.role}</p>
+                </div>
+                <span className="rounded-full bg-canvas px-3 py-1.5 text-[11px] font-semibold text-muted">
+                  Est. 2021
+                </span>
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="lg:col-span-8">
+            <Reveal delay={60}>
+              <h2 className="heading text-[clamp(1.75rem,4.2vw,3.1rem)] font-extrabold text-ink">
+                {about.statement}
+              </h2>
+            </Reveal>
+
+            <Reveal className="mt-8 grid gap-5 sm:grid-cols-2" delay={120}>
+              {about.paragraphs.map((paragraph, index) => (
+                <p
+                  key={paragraph.slice(0, 24)}
+                  className={
+                    index === 0
+                      ? "text-[1.0625rem] leading-relaxed text-ink/80 sm:col-span-2"
+                      : "text-[0.9375rem] leading-relaxed text-muted"
+                  }
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </Reveal>
+
+            <Reveal className="mt-10 border-t border-black/[0.08] pt-8" delay={180}>
+              <dl className="grid gap-6 sm:grid-cols-3">
+                {about.principles.map((principle) => (
+                  <div key={principle.title}>
+                    <dt className="text-sm font-bold tracking-[-0.01em] text-ink">
+                      {principle.title}
+                    </dt>
+                    <dd className="mt-1.5 text-[0.8125rem] leading-relaxed text-muted">
+                      {principle.detail}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </Reveal>
+
+            <Reveal className="mt-10 flex flex-wrap items-center gap-3" delay={220}>
+              <Button href="#work" variant="primary">
+                See selected work
+              </Button>
+              <div className="flex flex-wrap gap-2">
+                {disciplines.map((discipline) => (
+                  <span
+                    key={discipline.title}
+                    title={discipline.detail}
+                    className="rounded-full border border-black/[0.08] bg-white px-3.5 py-2 text-xs font-medium text-muted"
+                  >
+                    {discipline.title}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

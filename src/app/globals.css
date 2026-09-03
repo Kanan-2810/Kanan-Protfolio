@@ -2,39 +2,184 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg-primary: #0a0f1a;
-  --bg-secondary: #111827;
-  --bg-card: #1e293b;
-  --accent: #0ea5e9;
-  --accent-hover: #38bdf8;
-  --text-primary: #f8fafc;
-  --text-muted: #94a3b8;
-  --border: rgba(148, 163, 184, 0.12);
+@layer base {
+  :root {
+    --shell-x: 1.25rem;
+    --nav-h: 72px;
+    --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --shell-x: 2rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    :root {
+      --shell-x: 3rem;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-canvas text-ink antialiased;
+    overflow-x: clip;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #4c6fff;
+    color: #fff;
+  }
+
+  [id] {
+    scroll-margin-top: calc(var(--nav-h) + 24px);
+  }
+
+  :focus-visible {
+    outline: 2px solid #4c6fff;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .on-dark :focus-visible {
+    outline-color: #a9b8ff;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: var(--shell-x);
+  }
 
-body {
-  background: var(--bg-primary);
-  color: var(--text-primary);
+  .shell-wide {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: var(--shell-x);
+  }
+
+  /* Small uppercase eyebrow label used above every section heading. */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-label font-semibold uppercase;
+  }
+
+  .display {
+    letter-spacing: -0.035em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  .heading {
+    letter-spacing: -0.028em;
+    line-height: 1.04;
+    text-wrap: balance;
+  }
+
+  .card-base {
+    @apply rounded-2xl border border-black/[0.07] bg-white;
+  }
+
+  .card-dark {
+    @apply rounded-2xl border border-white/[0.14] bg-white/[0.05];
+  }
+
+  .hairline {
+    @apply border-black/[0.08];
+  }
 }
 
 @layer utilities {
-  .section-padding {
-    @apply py-16 md:py-24;
+  .section-y {
+    @apply py-20 md:py-28 lg:py-36;
   }
-  .container-narrow {
-    @apply mx-auto max-w-6xl px-6;
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   }
-  .gradient-text {
-    @apply bg-gradient-to-r from-sky-400 to-cyan-400 bg-clip-text text-transparent;
+
+  .text-gradient-blue {
+    background: linear-gradient(120deg, #4f6fff 0%, #6c7dff 45%, #dde4ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  }
+
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 12%,
+      #000 88%,
+      transparent
+    );
+  }
+
+  .arch {
+    border-radius: 999px 999px 32px 32px;
   }
 }
 
-/* Smooth scroll offset for fixed nav */
-section[id] {
-  scroll-margin-top: 5rem;
+/* Scroll-reveal: elements start hidden and are released by an
+   IntersectionObserver that flips [data-reveal] to "shown". */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.7s var(--ease-premium),
+    transform 0.7s var(--ease-premium);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal="shown"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
