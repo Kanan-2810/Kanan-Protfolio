@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { HeroHeading } from "@/components/sections/HeroHeading";
 import { HeroPortrait } from "@/components/sections/HeroPortrait";
-
-const skills = ["UI/UX", "Product Design", "Branding", "Developer"];
+import { HeroWordmark } from "@/components/sections/HeroWordmark";
+import { heroStats } from "@/data/site";
 
 export function Hero() {
   return (
@@ -16,36 +17,15 @@ export function Hero() {
             className="pointer-events-none absolute left-[62%] top-[54%] h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent-500/20 blur-[120px]"
           />
 
-          {/* Oversized background word. Centred on the panel so it bleeds off
-              both edges evenly, and anchored from the bottom — the arch is
-              always flush with the panel floor, so this keeps the word sitting
-              behind the head at every breakpoint. */}
-          <p
-            aria-hidden="true"
-            className="pointer-events-none absolute bottom-[15rem] left-1/2 w-[132%] -translate-x-1/2 select-none whitespace-nowrap text-center text-[clamp(3.25rem,17.5vw,15.5rem)] font-extrabold leading-[0.78] tracking-[-0.06em] text-white/75 sm:bottom-[19rem] md:bottom-[22rem] lg:bottom-[20.5rem] xl:bottom-[19.5rem]"
-          >
-            ENGINEER
-          </p>
+          <HeroWordmark />
 
           <div className="relative px-5 pt-10 md:px-10 md:pt-12">
-            <div className="grid items-end gap-10 lg:grid-cols-12 lg:gap-6">
-              {/* Headline: above the arch when stacked, bottom-left beside it
-                  on desktop. */}
-              <Reveal className="relative z-10 lg:col-span-6 lg:pb-14" delay={120}>
-                <p className="text-[0.9375rem] font-medium text-ink/70">
-                  Hey, I&apos;m Kanan.
-                </p>
-                <h1 className="display mt-3 text-[clamp(2rem,4.8vw,3.5rem)] font-extrabold text-ink">
-                  Product, AI &amp;
-                  {/* Below sm the line is too narrow for a forced break — let
-                      text-wrap: balance choose instead. */}
-                  <br className="hidden sm:inline" /> Engineer
-                </h1>
-              </Reveal>
+            <div className="relative grid items-end lg:min-h-[520px]">
+              <HeroHeading />
 
-              {/* Cut-out portrait, flush with the panel floor. */}
-              <div className="flex justify-center lg:col-span-6">
-                <div className="relative h-[300px] w-[264px] sm:h-[400px] sm:w-[352px] md:h-[470px] md:w-[414px] lg:h-[470px] lg:w-[400px] xl:h-[520px] xl:w-[458px]">
+              {/* Cut-out portrait, overlapping the heading so the middle isn’t empty. */}
+              <div className="flex justify-center lg:absolute lg:bottom-0 lg:left-[28%] lg:right-[-4%] lg:justify-start">
+                <div className="relative h-[300px] w-[264px] sm:h-[400px] sm:w-[352px] md:h-[470px] md:w-[414px] lg:h-[520px] lg:w-[460px] xl:h-[560px] xl:w-[500px]">
                   <HeroPortrait />
 
                   {/* Floating capability tags, tucked against the portrait. */}
@@ -75,14 +55,11 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Floating stat cards, overlapping the right of the arch. Desktop
-              only — the Stats section carries the same numbers on mobile. */}
-          {/* <div className="absolute bottom-10 right-8 z-10 hidden w-[260px] flex-col gap-3 lg:flex xl:right-10">
-            {heroStats.map((stat, index) => (
-              <Reveal
+          <div className="absolute bottom-10 right-5 z-10 hidden w-[232px] flex-col gap-3 lg:flex xl:right-8 xl:w-[252px]">
+            {heroStats.map((stat) => (
+              <div
                 key={stat.label}
                 className="flex items-center justify-between gap-4 rounded-[16px] bg-white/95 px-5 py-4 shadow-lift backdrop-blur-sm"
-                delay={260 + index * 90}
               >
                 <span className="text-[0.8125rem] font-medium leading-snug text-muted [text-wrap:balance]">
                   {stat.label}
@@ -90,22 +67,10 @@ export function Hero() {
                 <span className="text-2xl font-extrabold tracking-[-0.03em] text-ink">
                   {stat.value}
                 </span>
-              </Reveal>
+              </div>
             ))}
-          </div> */}
+          </div>
         </Reveal>
-
-        {/* Mobile equivalent of the floating tags. */}
-        <div className="mt-5 flex flex-wrap gap-2 sm:hidden">
-          {skills.map((skill) => (
-            <span
-              key={skill}
-              className="rounded-full border border-black/[0.07] bg-white px-3 py-1.5 text-xs font-semibold text-ink"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
 
         {/* Statement band. */}
         <Reveal
@@ -125,8 +90,8 @@ export function Hero() {
               <Button href="#contact" variant="primary">
                 Let&apos;s Talk
               </Button>
-              <Button href="#work" variant="outline-light" withChip={false}>
-                <span className="pr-2">View Work</span>
+              <Button href="#work" variant="outline-light">
+                View Work
               </Button>
             </div>
           </div>

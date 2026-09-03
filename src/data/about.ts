@@ -1,26 +1,26 @@
 export const about = {
   statement:
-    "I combine product thinking, design systems and technology to build digital experiences that are useful, beautiful and scalable.",
+    "I build digital products where product, applied AI and engineering are the same job.",
   paragraphs: [
-    "I'm Kanan — a product designer who writes code. For the last five years I've worked at the seam between design and engineering: healthcare platforms serving multiple clinics, consumer fintech, brand systems for founders who outgrew their first identity.",
-    "My work starts with the boring part. Interviews, audits, session recordings, a hard look at the analytics. The interesting decisions get much easier once you know what problem you're actually solving, and most projects that go wrong were mis-framed rather than mis-designed.",
-    "I build what I design. Shipping in React and TypeScript keeps the work honest — spacing, focus states and motion survive the trip from Figma, and I can sit in a code review without needing a translator.",
+    "I'm Kanan, A product and AI engineer. For five years I've shipped at that overlap: healthcare platforms used across clinics, consumer fintech, and founder tools that had to grow up without a rewrite.",
+    "I start with the product question, not the stack. Who is this for, what changes if it works, and what should never be automated. Most AI features fail because they were bolted on, not because the model was weak.",
+    "I ship in React and TypeScript, and I put AI in production only when it earns the latency and the trust. The work is finished when someone new can use it without a walkthrough.",
   ],
   principles: [
     {
-      title: "Clarity over cleverness",
+      title: "Product before the model",
       detail:
-        "If a screen needs explaining, it is not finished. Restraint is the harder craft.",
+        "If the job to be done cannot be said in one sentence, we are not ready to build.",
     },
     {
-      title: "Evidence over opinion",
+      title: "AI that earns its place",
       detail:
-        "Taste sets the direction; research decides between two directions that both look good.",
+        "A model is a tool. If a simpler rule does the work, ship the rule.",
     },
     {
-      title: "Design that ships",
+      title: "Engineering that lasts",
       detail:
-        "A design is only real once it is in production and someone unfamiliar can use it.",
+        "Typed, accessible, fast enough to forget. Code another engineer can own next quarter.",
     },
   ],
   signature: "Kanan Dave",

@@ -70,6 +70,7 @@ const config: Config = {
         marquee: "marquee 40s linear infinite",
         "fade-up": "fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both",
         "portrait-in": "portraitIn 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both",
+        blink: "blink 1s steps(1) infinite",
       },
       keyframes: {
         fadeUp: {
@@ -97,6 +98,10 @@ const config: Config = {
         marquee: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
+        },
+        blink: {
+          "0%, 49%": { opacity: "1" },
+          "50%, 100%": { opacity: "0" },
         },
       },
     },

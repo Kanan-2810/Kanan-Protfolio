@@ -1,7 +1,7 @@
 export const site = {
   name: "Kanan Dave",
   initials: "K",
-  role: "Product, UI/UX & Brand Design",
+  role: "Product, AI & Engineer",
   location: "Ahmedabad, India — working worldwide",
   availability: "Available for Q3 projects",
   email: "hello@kanandave.com",
@@ -32,7 +32,7 @@ export const navLinks = [
 ] as const;
 
 export const socials = [
-  { label: "LinkedIn", short: "In", href: "https://www.linkedin.com/in/kanandave" },
+  { label: "LinkedIn", short: "In", href: "https://www.linkedin.com/in/kanan-dave/" },
   { label: "Dribbble", short: "Dr", href: "https://dribbble.com" },
   { label: "Behance", short: "Be", href: "https://www.behance.net" },
   { label: "Instagram", short: "Ig", href: "https://www.instagram.com" },
@@ -67,10 +67,20 @@ export const heroTags: HeroTag[] = [
   { label: "Branding", bottom: "26%", left: "2%", rotate: -5, delay: "2.2s" },
 ];
 
+/** Oversized watermark behind the hero portrait. */
+export const heroWordmark = [
+  "ENGINEER",
+  "FREELANCER",
+  "DEVELOPER",
+  "DESIGNER",
+  "BUILDER",
+  "THINKER",
+] as const;
+
 /** The two cards that float over the right of the hero arch. */
 export const heroStats = [
-  { label: "Years crafting digital products", value: "5+" },
-  { label: "Successful client projects", value: "20+" },
+  { label: "Years crafting digital products", value: "3+" },
+  { label: "Successful client projects", value: "10+" },
 ] as const;
 
 export const clientLogos = [

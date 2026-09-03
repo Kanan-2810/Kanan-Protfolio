@@ -33,7 +33,7 @@ export function About() {
                   <p className="text-xs text-muted">{site.role}</p>
                 </div>
                 <span className="rounded-full bg-canvas px-3 py-1.5 text-[11px] font-semibold text-muted">
-                  Est. 2021
+                  Est. 2023
                 </span>
               </div>
             </div>

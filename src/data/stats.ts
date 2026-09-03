@@ -6,17 +6,17 @@ export type Stat = {
 
 export const stats: Stat[] = [
   {
-    value: "5+",
+    value: "3+",
     label: "Years Experience",
     note: "Designing and shipping products end to end.",
   },
   {
-    value: "20+",
+    value: "10+",
     label: "Projects Delivered",
     note: "From first sketch to production release.",
   },
   {
-    value: "10+",
+    value: "5+",
     label: "Brands Worked With",
     note: "Startups, studios and scaling teams.",
   },
