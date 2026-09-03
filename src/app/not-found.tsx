@@ -10,8 +10,8 @@ export default function NotFound() {
           Lost the thread
         </h1>
         <p className="mx-auto mt-5 max-w-sm text-[0.9375rem] leading-relaxed text-muted">
-          This page does not exist — or it moved during a redesign, which is
-          entirely plausible around here.
+          This page does not exist - or it moved while the product was
+          shipping, which is entirely plausible around here.
         </p>
         <div className="mt-9 flex justify-center">
           <Button href="/">Back to the portfolio</Button>

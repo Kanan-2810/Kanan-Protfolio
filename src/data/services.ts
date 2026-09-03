@@ -20,50 +20,50 @@ export type Service = {
 export const services: Service[] = [
   {
     index: "01",
-    title: "Brand Identity",
+    title: "AI Product Strategy",
     description:
-      "Building distinctive visual identities that create recognition and trust.",
-    deliverables: ["Positioning", "Wordmark", "Palette & type", "Brand book"],
+      "Decide what the model is for before you pick one. Framing, scope, and a build path a founder can fund.",
+    deliverables: ["Problem framing", "AI vs rules", "Architecture sketch", "MVP cut"],
     span: "lg:col-span-4 lg:row-span-2",
     visual: "identity",
     tone: "glass",
   },
   {
     index: "02",
-    title: "UI/UX Design",
+    title: "RAG & Agents",
     description:
-      "Designing intuitive digital products with clarity, usability and purpose.",
-    deliverables: ["Research", "Flows", "Interface design", "Prototypes"],
+      "Retrieval, tools, and workflows that answer real questions - grounded in your data, not a demo script.",
+    deliverables: ["pgvector / RAG", "LangChain", "Tool use", "Eval loops"],
     span: "lg:col-span-5 lg:row-span-2",
     visual: "interface",
     tone: "glass",
   },
   {
     index: "03",
-    title: "Web Experience",
+    title: "SaaS Architecture",
     description:
-      "Creating responsive websites that balance aesthetics, performance and conversion.",
-    deliverables: ["Art direction", "Responsive design", "Motion", "CMS"],
+      "Multi-tenant products that survive the second customer: auth, billing hooks, APIs, and a schema that can grow.",
+    deliverables: ["Next.js", "Prisma / Postgres", "Redis", "API design"],
     span: "lg:col-span-3 lg:row-span-3",
     visual: "photo-mobile",
     tone: "accent",
   },
   {
     index: "04",
-    title: "Product Design",
+    title: "Full-Stack Build",
     description:
-      "Turning complex product ideas into simple and useful experiences.",
-    deliverables: ["Discovery", "Design systems", "Testing", "Iteration"],
+      "React, Node, TypeScript - the interface, the API, and the data layer as one system, not three tickets.",
+    deliverables: ["React / Next.js", "Node.js", "TypeScript", "MongoDB"],
     span: "lg:col-span-4",
     visual: "layers",
     tone: "glass",
   },
   {
     index: "05",
-    title: "Development",
+    title: "Ship to Production",
     description:
-      "Bringing designs to life through scalable, performant frontend development.",
-    deliverables: ["React & TypeScript", "Accessibility", "Performance", "Handoff"],
+      "Deploy, observe, and iterate. A product is not done until someone who is not you can use it.",
+    deliverables: ["CI / deploy", "Logging", "Latency budgets", "Handoff"],
     span: "lg:col-span-5",
     visual: "code",
     tone: "solid",
@@ -79,26 +79,26 @@ export type ProcessStep = {
 export const processSteps: ProcessStep[] = [
   {
     step: "01",
-    title: "Understand",
+    title: "Discover",
     detail:
-      "Interviews, audits and a hard look at the numbers before a single pixel moves.",
+      "The job to be done, the data you actually have, and what should never be automated.",
   },
   {
     step: "02",
     title: "Frame",
     detail:
-      "One sentence that defines what we are solving, agreed by everyone who can veto it.",
+      "One sentence for the product. Architecture that can ship in weeks, not a platform fantasy.",
   },
   {
     step: "03",
-    title: "Design",
+    title: "Build",
     detail:
-      "Fast, low-fidelity exploration, then careful craft on the direction that survives testing.",
+      "Interface, API, model, and database in the same loop - so nothing dies in a handoff.",
   },
   {
     step: "04",
-    title: "Ship",
+    title: "Deploy",
     detail:
-      "Built alongside engineering so the shipped product still resembles the design.",
+      "Production, evals, and a path to change it next month without a rewrite.",
   },
 ];

@@ -2,14 +2,16 @@ export const site = {
   name: "Kanan Dave",
   initials: "K",
   role: "Product, AI & Engineer",
-  location: "Ahmedabad, India — working worldwide",
+  location: "Ahmedabad, India - working worldwide",
   availability: "Available for Q3 projects",
-  email: "hello@kanandave.com",
+  email: "kanandave2810@gmail.com",
   phone: "+91 00000 00000",
+  whatsappMessage:
+    "Hi Kanan, I saw your portfolio and would like to talk about a project.",
   resumeUrl: "/pdf/Kanan_Resume.pdf",
   /**
    * Background-removed portraits, floated over the hero arch and the FAQ card.
-   * WebP because they need an alpha channel and images are served unoptimised —
+   * WebP because they need an alpha channel and images are served unoptimised -
    * lossless PNG of the same cutout is roughly nine times the weight.
    */
   portraitCutout: "/images/kanan-cutout.webp",
@@ -19,7 +21,7 @@ export const site = {
   /** Original photograph the hero cutout is derived from. */
   portrait: "/images/kanan-photo.jpg",
   intro:
-    "I create thoughtful digital experiences that connect strategy, usability, and visual clarity.",
+    "I turn ideas into production-ready AI products - SaaS, RAG systems, and intelligent workflows.",
 } as const;
 
 export const navLinks = [
@@ -84,11 +86,11 @@ export const heroStats = [
 ] as const;
 
 export const clientLogos = [
-  "Lumora",
-  "Northwind",
-  "Vaultline",
-  "Orbit Labs",
-  "Fernway",
+  "LeadGPT",
+  "Kaushal Dave",
+  "Raghani",
+  "Optimiz",
+  "Gurukul",
   "Halcyon",
   "Tessella",
   "Brightside",

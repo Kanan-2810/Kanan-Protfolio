@@ -87,8 +87,8 @@ export function Stats() {
                 ))}
               </div>
               <p className="mt-1.5 text-[0.8125rem] font-medium text-muted">
-                <span className="font-bold text-ink">5.0 average</span> across 14
-                client engagements
+                <span className="font-bold text-ink">5.0 average</span> across
+                10+ product builds
               </p>
             </div>
           </div>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { site } from "@/data/site";
 
 // Self-hosted variable font: one 27kB file covers the whole 200–800 range and
@@ -18,22 +19,25 @@ const sans = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://kanandave.com"),
   title: {
-    default: `${site.name} — ${site.role}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} - ${site.role}`,
+    template: `%s - ${site.name}`,
   },
   description: site.intro,
   keywords: [
-    "product designer",
-    "UI/UX designer",
-    "brand designer",
-    "design systems",
-    "frontend engineer",
     "Kanan Dave",
+    "AI product engineer",
+    "full-stack developer",
+    "RAG systems",
+    "AI SaaS",
+    "Next.js",
+    "TypeScript",
+    "LangChain",
+    "OpenAI",
   ],
   authors: [{ name: site.name }],
   openGraph: {
     type: "website",
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} - ${site.role}`,
     description: site.intro,
     siteName: site.name,
     images: [
@@ -42,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.role}`,
+    title: `${site.name} - ${site.role}`,
     description: site.intro,
     images: [site.portraitStudio],
   },
@@ -67,6 +71,7 @@ export default function RootLayout({
         </a>
         <Navbar />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

@@ -11,27 +11,27 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Working with Kanan completely changed how we approached our digital product. The process was thoughtful, collaborative and incredibly detail-oriented — and the work held up under real users, which is the only test that matters.",
+      "Kanan did not hand us a prototype and leave. He framed the product, built the RAG layer, and had it in production with citations our team could trust. That is a rare loop.",
     name: "Elena Marsh",
     position: "VP Product",
     company: "Northwind Health",
     image: "/images/testimonial-portrait.jpg",
     imageAlt: "Elena Marsh, VP Product at Northwind Health, in her office",
-    metric: { value: "−41%", label: "Time to book" },
+    metric: { value: "−41%", label: "Time to first answer" },
   },
   {
     quote:
-      "We came for a website and left with a brand we actually understand. Six months on, our team still briefs agencies using the language from that first strategy session.",
+      "We needed a builder who could own the SaaS, not a specialist for each layer. Frontend, API, agents, deploy - one person, one timeline. We shipped.",
     name: "Priya Raghunathan",
     position: "Founder",
     company: "Lumora",
     image: "/images/testimonial-portrait.jpg",
     imageAlt: "Portrait of a founder in a bright modern office",
-    metric: { value: "+52%", label: "Order value" },
+    metric: { value: "8 wks", label: "Idea to production" },
   },
   {
     quote:
-      "Rare to find a designer who can sit in a code review and a brand workshop in the same afternoon and be genuinely useful in both. Our delivery speed doubled.",
+      "He sat in architecture and in the UI without dropping either. Our agent workflows actually run in prod - latency, evals, and a UI someone can operate.",
     name: "Daniel Okonjo",
     position: "Head of Engineering",
     company: "Orbit Labs",

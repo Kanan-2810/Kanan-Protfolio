@@ -35,8 +35,8 @@ export function Cta() {
 
           <Reveal delay={140}>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/70">
-              Have a product, brand or digital experience in mind? Let&apos;s
-              build something meaningful together.
+              Have an AI product, RAG system, or SaaS to ship? I design,
+              develop, and deploy it - then we put it in production.
             </p>
           </Reveal>
 

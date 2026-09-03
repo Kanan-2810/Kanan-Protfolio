@@ -26,8 +26,8 @@ export function Testimonials() {
           <div className="max-w-2xl">
             <Eyebrow tone="dark">Client Words</Eyebrow>
             <h2 className="heading mt-6 text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-white">
-              Trusted by ambitious
-              <br className="hidden sm:block" /> teams worldwide
+              Trusted by founders
+              <br className="hidden sm:block" /> shipping AI products
             </h2>
           </div>
 

@@ -189,33 +189,24 @@ export function ProjectCard({ project }: { project: Project }) {
   if (project.layout === "full") {
     return (
       <Link href={href} className={shell}>
-        <Visual
-          visual={project.visual}
-          sizes="100vw"
-          className="absolute inset-0 h-full w-full"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-950/85 to-navy-950/30"
-        />
-        <div className="relative grid gap-10 p-7 md:p-12 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-7">
+        <div className="grid lg:grid-cols-12">
+          <div className="flex flex-col justify-between p-7 md:p-12 lg:col-span-5">
             {header}
             {body}
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              {outcome}
-              <CaseStudyLink project={project} dark />
+            <div className="mt-8 space-y-6">
+              <Meta project={project} dark />
+              <div className="flex flex-wrap items-center gap-4">
+                {outcome}
+                <CaseStudyLink project={project} dark />
+              </div>
             </div>
           </div>
-          <div className="lg:col-span-5">
-            <div className="flex justify-center lg:justify-end">
-              {project.support?.[0]?.kind === "mockup" ? (
-                <mockups.mobile />
-              ) : null}
-            </div>
-            <div className="mt-8">
-              <Meta project={project} dark />
-            </div>
+          <div className="relative min-h-[280px] overflow-hidden sm:min-h-[380px] lg:col-span-7 lg:min-h-[520px]">
+            <Visual
+              visual={project.visual}
+              sizes="(max-width: 1024px) 100vw, 58vw"
+              className="relative h-full w-full"
+            />
           </div>
         </div>
       </Link>

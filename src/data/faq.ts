@@ -5,33 +5,33 @@ export type FaqItem = {
 
 export const faqs: FaqItem[] = [
   {
-    question: "What kind of projects do you work on?",
+    question: "What kind of work do you take on?",
     answer:
-      "Digital products, brand identities and the websites that carry them. In practice that usually means a SaaS platform that has outgrown its first interface, a brand that no longer matches the quality of the product, or a team that needs a design system before it can scale. If a project sits outside that, I will tell you and point you at someone better suited.",
+      "AI-powered SaaS, RAG systems, agent workflows, and the full-stack product around them. If the brief is a landing page or a brand-only engagement, I will say so and point you elsewhere. I am most useful when the product has to ship.",
   },
   {
-    question: "How does your design process work?",
+    question: "Do you only write AI code?",
     answer:
-      "Four phases: understand, frame, design, ship. Understanding means interviews, audits and looking at your data. Framing means agreeing one sentence about the problem before design starts. Design moves fast and low-fidelity first, then slows down for craft. Shipping means I stay involved through build, because that is where good design usually gets lost.",
+      "No. I design the product, build the frontend and backend, wire the model, and deploy it. React, Next.js, Node, TypeScript, Postgres, Prisma, Redis, OpenAI, LangChain. The model is one layer - not the whole job.",
   },
   {
-    question: "How long does a project typically take?",
+    question: "How do you decide if something should be AI?",
     answer:
-      "A design sprint runs two weeks. A full product engagement is usually six to sixteen weeks depending on scope. Brand identity work lands around eight to ten weeks. I would rather quote a realistic timeline and hit it than win the project on a date I cannot meet.",
+      "If a rule, a search index, or a better form does the job, we ship that. I use RAG and agents when the product has to reason over private data or a long-running workflow. The test is production: latency, cost, and whether a stranger can trust the answer.",
   },
   {
-    question: "Do you also handle development?",
+    question: "How long does a typical engagement take?",
     answer:
-      "Yes — frontend. I build in React and TypeScript, which means I can hand off to your team with components rather than screenshots, or implement the work myself. Backend, infrastructure and native mobile I leave to specialists, and I am happy to work alongside yours.",
+      "A sprint to prove a slice is two weeks. A product build is usually eight to sixteen weeks. I quote a timeline I can hit. A demo in a weekend is not a product.",
   },
   {
-    question: "Do you work with international clients?",
+    question: "Do you work with international founders?",
     answer:
-      "Regularly. I am based in India and currently work with teams across Europe, the UK and North America. I keep a four-hour overlap with your working day, run async updates by default, and reserve synchronous time for the conversations that genuinely need it.",
+      "Yes. I am based in Ahmedabad and work with teams in the US, UK, and Europe. Async by default, overlap when the decision actually needs a call.",
   },
   {
-    question: "How can we start a project?",
+    question: "How do we start?",
     answer:
-      "Send a short note about what you are building and where it is stuck. We will do a 30-minute call to see whether I am the right fit — no pitch deck. If it makes sense, you get a written proposal with scope, timeline and cost within a few days.",
+      "Send what you are building and where it is stuck. A 30-minute call - no deck. If it fits, you get a written scope, timeline, and cost within a few days.",
   },
 ];

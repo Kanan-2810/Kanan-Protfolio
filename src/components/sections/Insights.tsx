@@ -13,13 +13,13 @@ export function Insights() {
           <div className="max-w-xl">
             <Eyebrow>Insights</Eyebrow>
             <h2 className="heading mt-6 text-[clamp(2rem,5vw,3.5rem)] font-extrabold text-ink">
-              Where strategy
-              <br className="hidden sm:block" /> meets creativity
+              Notes from shipping
+              <br className="hidden sm:block" /> AI products
             </h2>
           </div>
           <p className="max-w-sm text-[0.9375rem] leading-relaxed text-muted">
-            Occasional notes on the parts of design that are hard to put in a
-            portfolio — framing, restraint and what actually ships.
+            Occasional notes on RAG, SaaS architecture, and the parts of
+            shipping that never make a demo.
           </p>
         </Reveal>
 

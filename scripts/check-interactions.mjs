@@ -91,7 +91,7 @@ const pass = (msg) => console.log(`  ok   ${msg}`);
 
   console.log("mobile 390");
 
-  // Scope to the primary navigation — the footer repeats the same labels.
+  // Scope to the primary navigation - the footer repeats the same labels.
   const nav = page.getByRole("navigation", { name: /primary/i });
   const toggle = page.getByRole("button", { name: /menu/i }).first();
   await toggle.click();

@@ -45,7 +45,7 @@ do {
         format: .RGBA8,
         colorSpace: CGColorSpace(name: CGColorSpace.sRGB)!
     )
-    print("wrote \(outputURL.path) — instances: \(observation.allInstances.count)")
+    print("wrote \(outputURL.path) - instances: \(observation.allInstances.count)")
 } catch {
     FileHandle.standardError.write("failed: \(error)\n".data(using: .utf8)!)
     exit(70)

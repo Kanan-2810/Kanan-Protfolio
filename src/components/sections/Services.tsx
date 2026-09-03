@@ -21,13 +21,13 @@ export function Services() {
             Expertise
           </Eyebrow>
           <h2 className="heading mt-6 text-[clamp(2rem,5.5vw,3.75rem)] font-extrabold text-white">
-            Design Solutions Built
-            <br className="hidden sm:block" /> For Growth
+            Products Built To
+            <br className="hidden sm:block" /> Ship In Production
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[0.9375rem] leading-relaxed text-white/60">
             Five capabilities that usually arrive together. Most engagements
-            start with one and pull in the rest as the work reveals what is
-            actually needed.
+            start with a product question and pull in AI, stack, and deploy as
+            the work reveals what is actually needed.
           </p>
         </Reveal>
 

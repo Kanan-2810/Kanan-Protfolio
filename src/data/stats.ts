@@ -7,23 +7,23 @@ export type Stat = {
 export const stats: Stat[] = [
   {
     value: "3+",
-    label: "Years Experience",
-    note: "Designing and shipping products end to end.",
+    label: "Years Shipping",
+    note: "AI products and full-stack systems in production.",
   },
   {
     value: "10+",
-    label: "Projects Delivered",
-    note: "From first sketch to production release.",
+    label: "Products Delivered",
+    note: "From first commit to deploy, not just a prototype.",
   },
   {
     value: "5+",
-    label: "Brands Worked With",
-    note: "Startups, studios and scaling teams.",
+    label: "Startups Worked With",
+    note: "Founders who needed a builder, not a handoff.",
   },
   {
-    value: "3",
-    label: "Design Disciplines",
-    note: "Brand, product and frontend engineering.",
+    value: "4",
+    label: "Layers I Own",
+    note: "Product, AI, full-stack, and production ops.",
   },
 ];
 
@@ -32,6 +32,7 @@ export type Discipline = {
   detail: string;
 };
 
+/** Shown on the About card. Left as product/AI/build - About copy is owned separately. */
 export const disciplines: Discipline[] = [
   { title: "Strategy", detail: "Positioning, product framing, design audits" },
   { title: "Design", detail: "Interfaces, identity, motion, design systems" },

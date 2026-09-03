@@ -15,8 +15,8 @@ export function Projects() {
             <br className="hidden sm:block" /> Real Impact
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[0.9375rem] leading-relaxed text-muted">
-            Four engagements, each with a measurable outcome. Every card opens a
-            full case study — process, decisions and what I would do differently.
+            Selected work I designed, built, and shipped. Every card opens a
+            case study - architecture, decisions, and what I would do next.
           </p>
         </Reveal>
 

@@ -22,10 +22,10 @@ export function generateMetadata({ params }: PageProps): Metadata {
   if (!project) return { title: "Case study not found" };
 
   return {
-    title: `${project.title} — Case Study`,
+    title: `${project.title} - Case Study`,
     description: project.tagline,
     openGraph: {
-      title: `${project.title} — Case Study`,
+      title: `${project.title} - Case Study`,
       description: project.tagline,
       images:
         project.visual.kind === "image" ? [{ url: project.visual.src }] : undefined,

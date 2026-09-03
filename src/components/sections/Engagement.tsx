@@ -17,12 +17,12 @@ export function Engagement() {
             Ways To Work Together
           </Eyebrow>
           <h2 className="heading mt-6 text-[clamp(2rem,5.5vw,3.5rem)] font-extrabold text-white">
-            Flexible design support
-            <br className="hidden sm:block" /> for growing brands
+            Design, develop, deploy
+            <br className="hidden sm:block" /> for teams that ship
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-[0.9375rem] leading-relaxed text-white/60">
             Three ways in, priced honestly. Every engagement starts with a call
-            and a written scope — no surprises halfway through.
+            and a written scope - then I own the product until it is live.
           </p>
         </Reveal>
 

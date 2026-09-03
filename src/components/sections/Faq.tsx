@@ -12,7 +12,7 @@ import { cn } from "@/lib/cn";
 
 export function Faq() {
   // useId() emits colons, which are legal in an id but need escaping in a CSS
-  // selector — strip them so the panels stay easy to target.
+  // selector - strip them so the panels stay easy to target.
   const baseId = useId().replace(/:/g, "");
   const [open, setOpen] = useState<number[]>([]);
 
@@ -52,7 +52,7 @@ export function Faq() {
                     FAQ
                   </Eyebrow>
                   <h2 className="heading mt-6 text-[clamp(1.75rem,3.6vw,2.75rem)] font-extrabold text-white">
-                    Got questions about working together?
+                    Got questions about building an AI product?
                   </h2>
                   <p className="mt-5 max-w-sm text-[0.9375rem] leading-relaxed text-white/85">
                     If the answer you need is not below, just ask. I reply to

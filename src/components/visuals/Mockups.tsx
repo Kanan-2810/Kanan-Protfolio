@@ -54,7 +54,7 @@ function AreaChart({ className }: { className?: string }) {
   );
 }
 
-/** Desktop product dashboard — used for the Northwind case study. */
+/** Desktop product dashboard - used for the Northwind case study. */
 export function AnalyticsMockup({ className }: { className?: string }) {
   const rows = [
     { name: "M. Alvarez", time: "09:15", state: "Confirmed" },
@@ -155,7 +155,7 @@ export function AnalyticsMockup({ className }: { className?: string }) {
   );
 }
 
-/** Phone frame with a calm investing UI — used for the Vaultline case study. */
+/** Phone frame with a calm investing UI - used for the Vaultline case study. */
 export function MobileMockup({ className }: { className?: string }) {
   return (
     <div
@@ -244,7 +244,7 @@ export function MobileMockup({ className }: { className?: string }) {
   );
 }
 
-/** Brand identity specimen — wordmark, palette and type ramp. */
+/** Brand identity specimen - wordmark, palette and type ramp. */
 export function BrandMockup({ className }: { className?: string }) {
   const swatches = ["#082D78", "#4C6FFF", "#A9B8FF", "#DDE4FF", "#111111"];
 

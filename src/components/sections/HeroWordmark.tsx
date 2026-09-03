@@ -4,7 +4,7 @@ const loop = [...heroWordmark, ...heroWordmark];
 
 /**
  * Oversized editorial watermark. Same continuous sideways marquee as the
- * client-logo ticker in Stats — duplicated track, CSS-only.
+ * client-logo ticker in Stats - duplicated track, CSS-only.
  */
 export function HeroWordmark() {
   return (
