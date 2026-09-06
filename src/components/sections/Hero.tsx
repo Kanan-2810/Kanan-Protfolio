@@ -24,8 +24,8 @@ export function Hero() {
               <HeroHeading />
 
               {/* Cut-out portrait, overlapping the heading so the middle isn’t empty. */}
-              <div className="flex justify-center lg:absolute lg:bottom-0 lg:left-[28%] lg:right-[-4%] lg:justify-start">
-                <div className="relative h-[300px] w-[264px] sm:h-[400px] sm:w-[352px] md:h-[470px] md:w-[414px] lg:h-[520px] lg:w-[460px] xl:h-[560px] xl:w-[500px]">
+              <div className="flex justify-start sm:justify-center lg:absolute lg:bottom-0 lg:left-[28%] lg:right-[-4%] lg:justify-start">
+                <div className="relative h-[400px] w-full sm:h-[400px] sm:w-[352px] md:h-[470px] md:w-[414px] lg:h-[520px] lg:w-[460px] xl:h-[560px] xl:w-[500px]">
                   <HeroPortrait />
 
                   {/* Floating capability tags, tucked against the portrait. */}

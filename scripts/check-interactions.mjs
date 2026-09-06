@@ -66,10 +66,10 @@ const pass = (msg) => console.log(`  ok   ${msg}`);
   // Testimonial carousel.
   const next = page.getByRole("button", { name: /next testimonial/i });
   await next.scrollIntoViewIfNeeded();
-  const before = await page.locator("blockquote").first().innerText();
+  const before = await page.locator("#testimonials").getAttribute("data-testimonial-index");
   await next.click();
-  await page.waitForTimeout(600);
-  const after = await page.locator("blockquote").first().innerText();
+  await page.waitForTimeout(900);
+  const after = await page.locator("#testimonials").getAttribute("data-testimonial-index");
   before !== after ? pass("carousel advances") : fail("carousel did not advance");
 
   await page.evaluate(() => window.scrollTo(0, 0));

@@ -183,11 +183,11 @@ export const projects: Project[] = [
     slug: "excell",
     index: "03",
     title: "Excell",
-    client: "Raghani Tradelink",
+    client: "Excell",
     tagline:
       "Keyboard-first ERP client for multi-branch trade ops: orders, GST billing, collections, brokerage, and live branch/director dashboards on a Frappe backend.",
     summary:
-      "Raghani Tradelink needed a fast desktop/web front end for daily trading work - not a generic admin shell. I helped ship Excell: a React + Electron client with a typed Frappe API layer, stacked dialog workflows, GST-aware entry forms, brokerage/proforma flows, and Branch Head / Director command views, deployed as both a Windows app and assets served from the Frappe host.",
+      "Trade ops needed a fast desktop/web front end for daily work — not a generic admin shell. I helped ship Excell: a React + Electron client with a typed Frappe API layer, stacked dialog workflows, GST-aware entry forms, brokerage/proforma flows, and Branch Head / Director command views, deployed as both a Windows app and assets served from the Frappe host.",
     categories: ["Full-Stack", "ERP", "Brokerage"],
     year: "2026",
     role: "Full-Stack Engineer",
@@ -203,7 +203,7 @@ export const projects: Project[] = [
     },
     caseStudy: {
       intro:
-        "Excell is the day-to-day operating surface for Raghani Tradelink - masters, transactions, brokerage, reporting, and leadership cockpits. The product job is to make high-volume trade ops fast, GST-correct, and role-aware on top of a Frappe backend.",
+        "Excell is the day-to-day operating surface for multi-branch trade ops — masters, transactions, brokerage, reporting, and leadership cockpits. The product job is to make high-volume work fast, GST-correct, and role-aware on top of a Frappe backend.",
       chapters: [
         {
           label: "Challenge",
@@ -218,10 +218,10 @@ export const projects: Project[] = [
         {
           label: "Architecture",
           title: "Thin React client, Frappe as the source of truth",
-          body: "The app is a Vite React SPA that talks to Frappe over cookie sessions: custom login, resource CRUD, and whitelisted raghani.api.* methods wrapped in a shared client. TanStack Query and Zustand handle server cache and dialog/user/theme state. IndexedDB (rapp_cache) preloads customer/supplier link data for snappy search. PageDialogManager + dialogRegistry route ~100 surfaces as stackable dialogs with URL deep links. Electron wraps the same UI for desktop; production build copies assets into the Frappe raghani public/frontend tree.",
+          body: "The app is a Vite React SPA that talks to Frappe over cookie sessions: custom login, resource CRUD, and whitelisted domain APIs wrapped in a shared client. TanStack Query and Zustand handle server cache and dialog/user/theme state. IndexedDB preloads customer/supplier link data for snappy search. PageDialogManager + dialogRegistry route ~100 surfaces as stackable dialogs with URL deep links. Electron wraps the same UI for desktop; production build copies assets into the Frappe public/frontend tree.",
           bullets: [
             "frappe.js domain APIs: ledger, tax, orders, brokerage, PDFs",
-            "Dual delivery: Electron NSIS + Frappe-hosted /ragh",
+            "Dual delivery: Electron NSIS + Frappe-hosted web app",
             "Vite proxy to the production Frappe host in local dev",
           ],
         },
@@ -233,7 +233,7 @@ export const projects: Project[] = [
         {
           label: "Ship",
           title: "Package for desk and cloud, wire auth, clear desktop session on quit",
-          body: "electron-builder ships Windows (com.dhanveen.excell / productName Excell). The Electron shell loads the hosted /ragh app in production and clears session storage/cache on quit. Vite base paths align with Frappe's /assets/raghani/frontend/ asset layout. AuthContext restores Frappe sessions, clears IndexedDB on logout, and gates the shell behind the Raghani Tradelink launcher. My commits cluster on transaction modals, branch-head analysis dialogs, customer ledger, autocomplete fields, and dialog routing - the core of the shipped ops UX.",
+          body: "electron-builder ships Windows (productName Excell). The Electron shell loads the hosted Excell web app in production and clears session storage/cache on quit. Vite base paths align with Frappe's frontend asset layout. AuthContext restores Frappe sessions, clears IndexedDB on logout, and gates the shell behind the Excell launcher. My commits cluster on transaction modals, branch-head analysis dialogs, customer ledger, autocomplete fields, and dialog routing — the core of the shipped ops UX.",
         },
       ],
       results: [

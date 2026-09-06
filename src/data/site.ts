@@ -88,7 +88,7 @@ export const heroStats = [
 export const clientLogos = [
   "LeadGPT",
   "Kaushal Dave",
-  "Raghani",
+  "Excell",
   "Optimiz",
   "Gurukul",
   "Halcyon",

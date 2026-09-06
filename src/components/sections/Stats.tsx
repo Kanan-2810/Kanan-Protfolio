@@ -1,10 +1,10 @@
 import { Star } from "lucide-react";
+import Image from "next/image";
 import { Reveal } from "@/components/ui/Reveal";
+import { clients } from "@/data/clients";
 import { clientLogos } from "@/data/site";
 import { stats } from "@/data/stats";
 import { cn } from "@/lib/cn";
-
-const avatarInitials = ["EM", "PR", "DO", "TW"];
 
 export function Stats() {
   return (
@@ -62,17 +62,18 @@ export function Stats() {
         >
           <div className="flex items-center gap-4">
             <ul className="flex -space-x-2.5">
-              {avatarInitials.map((initials, index) => (
+              {clients.slice(0, 4).map((client) => (
                 <li
-                  key={initials}
-                  className={cn(
-                    "grid h-10 w-10 place-items-center rounded-full border-2 border-white text-[11px] font-bold",
-                    index % 2 === 0
-                      ? "bg-navy-800 text-white"
-                      : "bg-accent-100 text-accent-700",
-                  )}
+                  key={client.image}
+                  className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-white"
                 >
-                  {initials}
+                  <Image
+                    src={client.image}
+                    alt=""
+                    fill
+                    sizes="40px"
+                    className="object-cover object-top"
+                  />
                 </li>
               ))}
             </ul>

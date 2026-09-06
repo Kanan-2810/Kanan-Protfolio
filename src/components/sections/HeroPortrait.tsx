@@ -70,23 +70,23 @@ export function HeroPortrait() {
         width={685}
         height={786}
         priority
-        sizes="(max-width: 640px) 300px, (max-width: 1024px) 490px, 545px"
+        sizes="(max-width: 640px) 420px, (max-width: 1024px) 490px, 545px"
         className={cn(
-          "absolute -bottom-[28%] left-1/2 h-[78%] w-auto max-w-none object-cover object-top drop-shadow-[0_26px_44px_rgba(8,45,120,0.32)]",
+          "absolute -bottom-[20%] left-[-18%] h-[88%] w-auto max-w-none object-cover object-top drop-shadow-[0_26px_44px_rgba(8,45,120,0.32)] sm:-bottom-[28%] sm:left-1/2 sm:h-[78%]",
           "transition-[transform,opacity] duration-[1100ms] ease-premium will-change-transform",
           entered
-            ? "-translate-x-1/2 translate-y-4 opacity-100"
-            : "-translate-x-1/2 translate-y-28 opacity-0",
+            ? "translate-y-8 opacity-100 sm:translate-y-4 sm:-translate-x-1/2"
+            : "translate-y-28 opacity-0 sm:-translate-x-1/2",
         )}
       />
 
-      <div className="absolute left-[70%] top-[12%] z-20 w-[200px] overflow-visible sm:left-[64%] sm:top-[36%] sm:w-[228px]">
-        <svg viewBox="0 0 220 148" className="invisible h-auto w-full" aria-hidden="true" />
+      <div className="absolute right-1 top-[12%] z-20 aspect-[220/176] w-[min(13.25rem,56vw)] overflow-visible sm:left-[64%] sm:right-auto sm:top-[36%] sm:aspect-[220/148] sm:w-[228px]">
+        <svg viewBox="0 0 220 148" className="invisible h-full w-full" aria-hidden="true" />
 
         <ThoughtCloud
           path={HELLO_PATH}
           visible={spoke && step === 0}
-          textClassName="top-[36%] px-[16%] text-[0.9375rem] sm:text-base"
+          textClassName="top-[36%] px-[16%] text-base"
         >
           <BubbleTypewriter
             text="Hey, I'm Kanan."
@@ -98,7 +98,7 @@ export function HeroPortrait() {
         <ThoughtCloud
           path={TRUST_PATH}
           visible={spoke && step === 1}
-          textClassName="top-[34%] px-[20%] text-[0.8125rem] sm:text-[0.875rem]"
+          textClassName="top-[34%] px-[18%] text-[0.875rem] sm:text-[0.875rem]"
         >
           <BubbleTypewriter
             text="Trust me, it'll be worth connecting."
@@ -109,7 +109,7 @@ export function HeroPortrait() {
         <ThoughtCloud
           path={CONNECT_PATH}
           visible={spoke && step === 2}
-          textClassName="top-[36%] px-[16%] text-[0.9375rem] sm:text-base"
+          textClassName="top-[36%] px-[16%] text-base"
         >
           <BubbleTypewriter
             text="Let's Connect."
@@ -121,7 +121,7 @@ export function HeroPortrait() {
           href={LINKEDIN_URL}
           path={LINKEDIN_PATH}
           visible={spoke && step === 3}
-          textClassName="top-[26%] px-[16%] text-[0.75rem] sm:text-[0.8125rem]"
+          textClassName="top-[26%] px-[16%] text-[0.8125rem] sm:text-[0.8125rem]"
         >
           <LinkedInMark />
           <BubbleTypewriter
@@ -224,8 +224,9 @@ function ThoughtCloud({
       <svg
         viewBox="0 0 220 148"
         fill="none"
+        preserveAspectRatio="none"
         aria-hidden="true"
-        className="h-auto w-full overflow-visible"
+        className="h-full w-full overflow-visible"
       >
         <g transform="translate(5 5)">
           <path
@@ -265,7 +266,7 @@ function LinkedInMark() {
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
-      className="h-9 w-9 shrink-0 sm:h-10 sm:w-10"
+      className="h-10 w-10 shrink-0"
     >
       <path
         fill="#0A66C2"
